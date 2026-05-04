@@ -39,22 +39,23 @@
 // }
 // console.log(array);
 
-const array = [1, 2, 3, 4, 6, 8, 10];
+// const array = [1, 2, 3, 4, 6, 8, 10];
+// function twoSum(target) {
+//   let pointer1 = 0;
+//   let pointer2 = array.length - 1;
+//   let output = null;
 
-function twoSum(target) {
-  let pointer1 = 0;
-  let pointer2 = array.length - 1;
-  let output = null;
+//   while (pointer1 !== pointer2) {
+//     if (array[pointer1] + array[pointer2] === target) {
+//       output = [array[pointer1], array[pointer2]];
+//       break;
+//     } else {
+//       pointer1++;
+//       pointer2--;
+//     }
+//   }
+//   return output;
+// }
+// console.log(twoSum(11));
 
-  while (pointer1 !== pointer2) {
-    if (array[pointer1] + array[pointer2] === target) {
-      output = [array[pointer1], array[pointer2]];
-      break;
-    } else {
-      pointer1++;
-      pointer2--;
-    }
-  }
-  return output;
-}
-console.log(twoSum(11));
+
