@@ -58,4 +58,32 @@
 // }
 // console.log(twoSum(11));
 
+// const array = [1, 2, 3, 4, 6, 8, 10];
+// let copy = array[0];
+// for (let i = 0; i < array.length - 1; i++) {
+//   array[i] = array[i + 1];
+// }
+// array[array.length - 1] = copy;
+// console.log(array);
 
+// const array = [1, 2, 3, 4, 6, 8, 10];
+// let copy = array[array.length - 1];
+// for (let i = array.length - 1; i > 1; i--) {
+//   array[i] = array[i - 1];
+// }
+// array[0] = copy;
+// console.log(array);
+
+const array = [1, 2, 3, 4, 6, 8, 10];
+
+function kNotion(step, array) {
+  for (let i = 0; i < step; i++) {
+    let copy = array[0];
+    for (let j = 0; j < array.length - 1; j++) {
+      array[j] = array[j + 1];
+    }
+    array[array.length - 1] = copy;
+  }
+  return array;
+}
+console.log(kNotion(2, array));
