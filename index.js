@@ -74,16 +74,32 @@
 // array[0] = copy;
 // console.log(array);
 
-const array = [1, 2, 3, 4, 6, 8, 10];
+// const array = [1, 2, 3, 4, 6, 8, 10];
 
-function kNotion(step, array) {
-  for (let i = 0; i < step; i++) {
-    let copy = array[0];
-    for (let j = 0; j < array.length - 1; j++) {
-      array[j] = array[j + 1];
-    }
-    array[array.length - 1] = copy;
-  }
-  return array;
+// function kNotion(step, array) {
+//   for (let i = 0; i < step; i++) {
+//     let copy = array[0];
+//     for (let j = 0; j < array.length - 1; j++) {
+//       array[j] = array[j + 1];
+//     }
+//     array[array.length - 1] = copy;
+//   }
+//   return array;
+// }
+// console.log(kNotion(2, array));
+
+// const array = [1, 2, 3, 4, 6, 8, 10];
+// let temp = new Array(array.length);
+// let k = 2;
+// for (let i = 0; i < array.length; i++) {
+//   temp[i] = array[(i + k) % array.length];
+// }
+// console.log(temp);
+
+const array = [1, 2, 3, 4, 6, 8, 10];
+let temp = new Array(array.length);
+let k = 2;
+for (let i = 0; i < array.length; i++) {
+  temp[(i + k) % array.length] = array[i];
 }
-console.log(kNotion(2, array));
+console.log(temp);
