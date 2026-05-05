@@ -164,15 +164,38 @@
 // }
 // console.log(margeArray);
 
-let array = [7, 1, 5, 3, 6, 4];
-let currentMax = 0;
-let currentMin = array[0];
-for (let i = 0; i < array.length; i++) {
-  const element = array[i];
-  if (element < currentMin) currentMin = element;
-  let tempMaxP = element - currentMin;
-  if (currentMax < tempMaxP) {
-    currentMax = Math.max(currentMax, tempMaxP);
+// let array = [7, 1, 5, 3, 6, 4];
+// let currentMax = 0;
+// let currentMin = array[0];
+// for (let i = 0; i < array.length; i++) {
+//   const element = array[i];
+//   if (element < currentMin) currentMin = element;
+//   let tempMaxP = element - currentMin;
+//   if (currentMax < tempMaxP) {
+//     currentMax = Math.max(currentMax, tempMaxP);
+//   }
+// }
+// console.log(currentMax);
+
+let array = [2, 0, 2, 1, 1, 0];
+let j = 0; // find 0
+let i = 0; // find 1
+let k = array.length - 1; // find 2
+while (i !== k) {
+  if (array[i] === 0) {
+    let temp = array[j];
+    array[j] = array[i];
+    array[i] = temp;
+    // i++;
+    j++;
+
+    array[j] = array[i];
+  } else if (array[i] === 2) {
+    let temp = array[k];
+    array[k] = array[i];
+    array[i] = temp;
+    k--;
   }
+  i++;
 }
-console.log(currentMax);
+console.log(array);
