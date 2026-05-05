@@ -177,25 +177,36 @@
 // }
 // console.log(currentMax);
 
-let array = [2, 0, 2, 1, 1, 0];
-let j = 0; // find 0
-let i = 0; // find 1
-let k = array.length - 1; // find 2
-while (i !== k) {
-  if (array[i] === 0) {
-    let temp = array[j];
-    array[j] = array[i];
-    array[i] = temp;
-    // i++;
-    j++;
+// let array = [2, 0, 2, 1, 1, 0];
+// let j = 0; // find 0
+// let i = 0; // find 1
+// let k = array.length - 1; // find 2
+// while (i !== k) {
+//   if (array[i] === 0) {
+//     let temp = array[j];
+//     array[j] = array[i];
+//     array[i] = temp;
+//     // i++;
+//     j++;
 
-    array[j] = array[i];
-  } else if (array[i] === 2) {
-    let temp = array[k];
-    array[k] = array[i];
-    array[i] = temp;
-    k--;
-  }
-  i++;
+//     array[j] = array[i];
+//   } else if (array[i] === 2) {
+//     let temp = array[k];
+//     array[k] = array[i];
+//     array[i] = temp;
+//     k--;
+//   }
+//   i++;
+// }
+// console.log(array);
+
+const array = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+let maxValue = -Infinity;
+let sum = 0;
+for (let i = 0; i < array.length; i++) {
+  const element = array[i];
+  let tempSum = sum + element;
+  if (maxValue < tempSum) maxValue = tempSum;
+  sum = tempSum < 0 ? 0 : tempSum;
 }
-console.log(array);
+console.log(maxValue);
