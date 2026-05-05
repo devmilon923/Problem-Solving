@@ -135,31 +135,44 @@
 // }
 // console.log(removeDup(array));
 
-const array1 = [2, 5, 7];
-const array2 = [4, 6, 9, 10];
+// const array1 = [2, 5, 7];
+// const array2 = [4, 6, 9, 10];
 
-let pointer1 = 0;
-let pointer2 = 0;
-let pointer3 = 0;
-let margeArray = new Array(array1.length + array2.length);
-while (pointer1 < array1.length && pointer2 < array2.length) {
-  if (array1[pointer1] > array2[pointer2]) {
-    margeArray[pointer3] = array2[pointer2];
-    pointer2++;
-  } else {
-    margeArray[pointer3] = array1[pointer1];
-    pointer1++;
+// let pointer1 = 0;
+// let pointer2 = 0;
+// let pointer3 = 0;
+// let margeArray = new Array(array1.length + array2.length);
+// while (pointer1 < array1.length && pointer2 < array2.length) {
+//   if (array1[pointer1] > array2[pointer2]) {
+//     margeArray[pointer3] = array2[pointer2];
+//     pointer2++;
+//   } else {
+//     margeArray[pointer3] = array1[pointer1];
+//     pointer1++;
+//   }
+//   pointer3++;
+// }
+// while (pointer1 < array1.length) {
+//   margeArray[pointer3] = array1[pointer1];
+//   pointer1++;
+//   pointer3++;
+// }
+// while (pointer2 < array2.length) {
+//   margeArray[pointer3] = array2[pointer2];
+//   pointer2++;
+//   pointer3++;
+// }
+// console.log(margeArray);
+
+let array = [7, 1, 5, 3, 6, 4];
+let currentMax = 0;
+let currentMin = array[0];
+for (let i = 0; i < array.length; i++) {
+  const element = array[i];
+  if (element < currentMin) currentMin = element;
+  let tempMaxP = element - currentMin;
+  if (currentMax < tempMaxP) {
+    currentMax = Math.max(currentMax, tempMaxP);
   }
-  pointer3++;
 }
-while (pointer1 < array1.length) {
-  margeArray[pointer3] = array1[pointer1];
-  pointer1++;
-  pointer3++;
-}
-while (pointer2 < array2.length) {
-  margeArray[pointer3] = array2[pointer2];
-  pointer2++;
-  pointer3++;
-}
-console.log(margeArray);
+console.log(currentMax);
