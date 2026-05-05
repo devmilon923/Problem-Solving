@@ -120,17 +120,46 @@
 // }
 // console.log(array);
 
-const array = [0, 0, 1, 2, 2, 3, 5, 6, 6];
-function removeDup(array) {
-  let pointer1 = 0;
-  let pointer2 = pointer1 + 1;
-  while (pointer1 < array.length) {
-    if (array[pointer1] < array[pointer1 + 1]) {
-      array[pointer2] = array[pointer1 + 1];
-      pointer2++;
-    }
+// const array = [0, 0, 1, 2, 2, 3, 5, 6, 6];
+// function removeDup(array) {
+//   let pointer1 = 0;
+//   let pointer2 = pointer1 + 1;
+//   while (pointer1 < array.length) {
+//     if (array[pointer1] < array[pointer1 + 1]) {
+//       array[pointer2] = array[pointer1 + 1];
+//       pointer2++;
+//     }
+//     pointer1++;
+//   }
+//   return array;
+// }
+// console.log(removeDup(array));
+
+const array1 = [2, 5, 7];
+const array2 = [4, 6, 9, 10];
+
+let pointer1 = 0;
+let pointer2 = 0;
+let pointer3 = 0;
+let margeArray = new Array(array1.length + array2.length);
+while (pointer1 < array1.length && pointer2 < array2.length) {
+  if (array1[pointer1] > array2[pointer2]) {
+    margeArray[pointer3] = array2[pointer2];
+    pointer2++;
+  } else {
+    margeArray[pointer3] = array1[pointer1];
     pointer1++;
   }
-  return array;
+  pointer3++;
 }
-console.log(removeDup(array));
+while (pointer1 < array1.length) {
+  margeArray[pointer3] = array1[pointer1];
+  pointer1++;
+  pointer3++;
+}
+while (pointer2 < array2.length) {
+  margeArray[pointer3] = array2[pointer2];
+  pointer2++;
+  pointer3++;
+}
+console.log(margeArray);
