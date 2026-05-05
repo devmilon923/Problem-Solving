@@ -200,13 +200,27 @@
 // }
 // console.log(array);
 
-const array = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
-let maxValue = -Infinity;
-let sum = 0;
-for (let i = 0; i < array.length; i++) {
+// const array = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+// let maxValue = -Infinity;
+// let sum = 0;
+// for (let i = 0; i < array.length; i++) {
+//   const element = array[i];
+//   let tempSum = sum + element;
+//   if (maxValue < tempSum) maxValue = tempSum;
+//   sum = tempSum < 0 ? 0 : tempSum;
+// }
+// console.log(maxValue);
+
+const array = [2, 2, 1, 1, 1, 2, 2];
+let count = 0;
+let ans = array[0];
+for (let i = 1; i < array.length; i++) {
   const element = array[i];
-  let tempSum = sum + element;
-  if (maxValue < tempSum) maxValue = tempSum;
-  sum = tempSum < 0 ? 0 : tempSum;
+  if (count <= 0) count = 0;
+  if (element === ans) {
+    count++;
+  } else {
+    count--;
+  }
 }
-console.log(maxValue);
+console.log(ans);
