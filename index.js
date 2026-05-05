@@ -104,18 +104,33 @@
 // }
 // console.log(temp);
 
-const array = [1, 2, 3, 4, 5];
-let k = 3 % array.length;
-reverse(0, k - 1);
-reverse(k, array.length - 1);
-reverse(0, array.length - 1);
-function reverse(value1, value2) {
-  while (value1 < value2) {
-    let temp = array[value1];
-    array[value1] = array[value2];
-    array[value2] = temp;
-    value1++;
-    value2--;
+// const array = [1, 2, 3, 4, 5];
+// let k = 3 % array.length;
+// reverse(0, k - 1);
+// reverse(k, array.length - 1);
+// reverse(0, array.length - 1);
+// function reverse(value1, value2) {
+//   while (value1 < value2) {
+//     let temp = array[value1];
+//     array[value1] = array[value2];
+//     array[value2] = temp;
+//     value1++;
+//     value2--;
+//   }
+// }
+// console.log(array);
+
+const array = [0, 0, 1, 2, 2, 3, 5, 6, 6];
+function removeDup(array) {
+  let pointer1 = 0;
+  let pointer2 = pointer1 + 1;
+  while (pointer1 < array.length) {
+    if (array[pointer1] < array[pointer1 + 1]) {
+      array[pointer2] = array[pointer1 + 1];
+      pointer2++;
+    }
+    pointer1++;
   }
+  return array;
 }
-console.log(array);
+console.log(removeDup(array));
