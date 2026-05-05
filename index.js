@@ -96,10 +96,26 @@
 // }
 // console.log(temp);
 
-const array = [1, 2, 3, 4, 6, 8, 10];
-let temp = new Array(array.length);
-let k = 2;
-for (let i = 0; i < array.length; i++) {
-  temp[(i + k) % array.length] = array[i];
+// const array = [1, 2, 3, 4, 6, 8, 10];
+// let temp = new Array(array.length);
+// let k = 2;
+// for (let i = 0; i < array.length; i++) {
+//   temp[(i + k) % array.length] = array[i];
+// }
+// console.log(temp);
+
+const array = [1, 2, 3, 4, 5];
+let k = 3 % array.length;
+reverse(0, k - 1);
+reverse(k, array.length - 1);
+reverse(0, array.length - 1);
+function reverse(value1, value2) {
+  while (value1 < value2) {
+    let temp = array[value1];
+    array[value1] = array[value2];
+    array[value2] = temp;
+    value1++;
+    value2--;
+  }
 }
-console.log(temp);
+console.log(array);
