@@ -211,16 +211,30 @@
 // }
 // console.log(maxValue);
 
-const array = [2, 2, 1, 1, 1, 2, 2];
-let count = 0;
-let ans = array[0];
-for (let i = 1; i < array.length; i++) {
-  const element = array[i];
-  if (count <= 0) count = 0;
-  if (element === ans) {
-    count++;
-  } else {
-    count--;
-  }
+// const array = [2, 2, 1, 1, 1, 2, 2];
+// let count = 0;
+// let ans = array[0];
+// for (let i = 1; i < array.length; i++) {
+//   const element = array[i];
+//   if (count <= 0) count = 0;
+//   if (element === ans) {
+//     count++;
+//   } else {
+//     count--;
+//   }
+// }
+// console.log(ans);
+
+const stringValue = "my name is milon";
+
+let i = 0;
+let j = stringValue.length - 1;
+let stringArray = stringValue.split("");
+while (i < j) {
+  let temp = stringArray[i];
+  stringArray[i] = stringArray[j];
+  stringArray[j] = temp;
+  i++;
+  j--;
 }
-console.log(ans);
+console.log(stringArray.join(""));
