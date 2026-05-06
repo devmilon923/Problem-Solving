@@ -239,17 +239,32 @@
 // }
 // console.log(stringArray.join(""));
 
-function checkPallindrome(stringValue) {
-  let i = 0;
-  let j = stringValue.length - 1;
-  let status = false;
-  while (i !== j) {
-    if (stringValue[i] !== stringValue[j]) break;
-    status = true;
-    i++;
-    j--;
-  }
-  return status;
-}
+// function checkPallindrome(stringValue) {
+//   let i = 0;
+//   let j = stringValue.length - 1;
+//   let status = false;
+//   while (i !== j) {
+//     if (stringValue[i] !== stringValue[j]) break;
+//     status = true;
+//     i++;
+//     j--;
+//   }
+//   return status;
+// }
 
-console.log(checkPallindrome("milon"));
+// console.log(checkPallindrome("milon"));
+
+function wordFequency(stringValue) {
+  let result = new Map();
+  let tempArray = new Array(128).fill(0);
+  for (let i = 0; i < stringValue.length; i++) {
+    const getIndex = stringValue.charCodeAt(i);
+    tempArray[getIndex] = tempArray[getIndex] + 1;
+  }
+  for (let i = 0; i < stringValue.length; i++) {
+    const getIndex = stringValue.charCodeAt(i);
+    result.set(stringValue[i], tempArray[getIndex]);
+  }
+  return result;
+}
+console.log(wordFequency("milon"));
