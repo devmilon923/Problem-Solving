@@ -225,16 +225,31 @@
 // }
 // console.log(ans);
 
-const stringValue = "my name is milon";
+// const stringValue = "my name is milon";
 
-let i = 0;
-let j = stringValue.length - 1;
-let stringArray = stringValue.split("");
-while (i < j) {
-  let temp = stringArray[i];
-  stringArray[i] = stringArray[j];
-  stringArray[j] = temp;
-  i++;
-  j--;
+// let i = 0;
+// let j = stringValue.length - 1;
+// let stringArray = stringValue.split("");
+// while (i < j) {
+//   let temp = stringArray[i];
+//   stringArray[i] = stringArray[j];
+//   stringArray[j] = temp;
+//   i++;
+//   j--;
+// }
+// console.log(stringArray.join(""));
+
+function checkPallindrome(stringValue) {
+  let i = 0;
+  let j = stringValue.length - 1;
+  let status = false;
+  while (i !== j) {
+    if (stringValue[i] !== stringValue[j]) break;
+    status = true;
+    i++;
+    j--;
+  }
+  return status;
 }
-console.log(stringArray.join(""));
+
+console.log(checkPallindrome("milon"));
