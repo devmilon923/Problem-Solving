@@ -254,17 +254,51 @@
 
 // console.log(checkPallindrome("milon"));
 
-function wordFequency(stringValue) {
-  let result = new Map();
-  let tempArray = new Array(128).fill(0);
-  for (let i = 0; i < stringValue.length; i++) {
-    const getIndex = stringValue.charCodeAt(i);
-    tempArray[getIndex] = tempArray[getIndex] + 1;
+// function wordFequency(stringValue) {
+//   let result = new Map();
+//   let tempArray = new Array(128).fill(0);
+//   for (let i = 0; i < stringValue.length; i++) {
+//     const getIndex = stringValue.charCodeAt(i);
+//     tempArray[getIndex] = tempArray[getIndex] + 1;
+//   }
+//   for (let i = 0; i < stringValue.length; i++) {
+//     const getIndex = stringValue.charCodeAt(i);
+//     result.set(stringValue[i], tempArray[getIndex]);
+//   }
+//   return result;
+// }
+// console.log(wordFequency("milon"));
+
+// function removeDuplicates(nums) {
+//   let left = 1;
+
+//   for (let right = 1; right < nums.length; right++) {
+//     const element = nums[right];
+//     if (element !== nums[right - 1]) {
+//       nums[left] = element;
+//       left++;
+//     }
+//   }
+//   return left;
+// }
+// console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+// i;
+// // [0,0,1,1,1,2,2,3,3,4]
+// j;
+
+//same =true
+// not same = n+1 update
+
+let array = [3, 7, 1, 9, 10, 5];
+letTempLength = array.length;
+for (let index = 0; index < letTempLength; letTempLength--) {
+  for (let i = 0; i < letTempLength; i++) {
+    const element = array[i];
+    if (element > array[i + 1]) {
+      let temp = element;
+      array[i] = array[i + 1];
+      array[i + 1] = temp;
+    }
   }
-  for (let i = 0; i < stringValue.length; i++) {
-    const getIndex = stringValue.charCodeAt(i);
-    result.set(stringValue[i], tempArray[getIndex]);
-  }
-  return result;
 }
-console.log(wordFequency("milon"));
+console.log(array);
