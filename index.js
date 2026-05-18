@@ -303,18 +303,31 @@
 // }
 // console.log(array);
 
+// let array = [3, 7, 1, 9, 10, 5];
+// let minIndex = 0;
+// for (let i = 0; i < array.length; i++) {
+//   for (let j = i + 1; j < array.length; j++) {
+//     if (array[minIndex] > array[j]) {
+//       minIndex = j;
+//     }
+//   }
+//   if (i !== minIndex) {
+//     let temp = array[minIndex];
+//     array[minIndex] = array[i];
+//     array[i] = temp;
+//   }
+// }
+// console.log(array);
+
 let array = [3, 7, 1, 9, 10, 5];
-let minIndex = 0;
-for (let i = 0; i < array.length; i++) {
-  for (let j = i + 1; j < array.length; j++) {
-    if (array[minIndex] > array[j]) {
-      minIndex = j;
-    }
+
+for (let i = 1; i < array.length; i++) {
+  let key = i;
+  let j = i - 1;
+  while (j >= 0 && array[j] > key) {
+    array[j + 1] = array[j];
+    j--;
   }
-  if (i !== minIndex) {
-    let temp = array[minIndex];
-    array[minIndex] = array[i];
-    array[i] = temp;
-  }
+  array[j + 1] = key;
 }
 console.log(array);
