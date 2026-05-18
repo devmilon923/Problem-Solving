@@ -289,16 +289,32 @@
 //same =true
 // not same = n+1 update
 
+// let array = [3, 7, 1, 9, 10, 5];
+// letTempLength = array.length;
+// for (let index = 0; index < letTempLength; letTempLength--) {
+//   for (let i = 0; i < letTempLength; i++) {
+//     const element = array[i];
+//     if (element > array[i + 1]) {
+//       let temp = element;
+//       array[i] = array[i + 1];
+//       array[i + 1] = temp;
+//     }
+//   }
+// }
+// console.log(array);
+
 let array = [3, 7, 1, 9, 10, 5];
-letTempLength = array.length;
-for (let index = 0; index < letTempLength; letTempLength--) {
-  for (let i = 0; i < letTempLength; i++) {
-    const element = array[i];
-    if (element > array[i + 1]) {
-      let temp = element;
-      array[i] = array[i + 1];
-      array[i + 1] = temp;
+let minIndex = 0;
+for (let i = 0; i < array.length; i++) {
+  for (let j = i + 1; j < array.length; j++) {
+    if (array[minIndex] > array[j]) {
+      minIndex = j;
     }
+  }
+  if (i !== minIndex) {
+    let temp = array[minIndex];
+    array[minIndex] = array[i];
+    array[i] = temp;
   }
 }
 console.log(array);
